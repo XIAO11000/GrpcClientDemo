@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServerDemo";
+
+package order;
+
+service Order {
+
+  rpc GetOrder (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+    string orderNo = 1;
+}
+
+message OrderResponse {
+    string orderNo = 1;
+    double amonut  = 2;  
+    enum OrderType {
+	    UNKNOWN = 0;
+    };
+    OrderType orderType = 3;
+    int64 createTime = 4;
+    repeated OrderItem items = 5;
+}
+
+message OrderItem {
+    string goodsSn = 1;
+    string goodsName = 2;
+    int32 qty = 3;
+    double price = 4;
+}
+
