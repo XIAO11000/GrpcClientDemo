@@ -1,0 +1,3 @@
+[submodule "GrpcClientDemo/Protos"]
+	path = GrpcClientDemo/Protos
+	url = https://github.com/XIAO11000/GrpcDemo.Protos.git
